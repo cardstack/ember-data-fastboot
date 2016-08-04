@@ -1,7 +1,7 @@
 {
   "name": "ember-data-fastboot",
   "version": "0.0.1",
-  "description": "Serializes and restores the ember-data store.",
+  "description": "Serializes and restores the ember-data store for fastboot.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -40,7 +40,9 @@
     "loader.js": "^4.0.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "fastboot",
+    "ember-data"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"

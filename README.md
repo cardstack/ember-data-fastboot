@@ -1,26 +1,15 @@
 # Ember-data-fastboot
 
-This README outlines the details of collaborating on this Ember addon.
+This addon serializes the contents of your [ember-data](https://github.com/emberjs/data) `Store` within the [Fastboot  shoebox](https://github.com/ember-fastboot/ember-cli-fastboot#the-shoebox). It happens like this:
+
+ 1. Your application renders in the fastboot server.
+ 2. At the end of fastboot rendering, all your Ember Data Models get serialized into the fastboot shoebox (which uses tags like `<script type="fastboot/shoebox">`).
+ 3. Your application boots up in the browser. This addon's instance-initializer notices the serialized models and uses `pushPayload` to load them into the `Store`.
+ 4. As your app renders in the browser, any `store.findRecord`, etc will locate the already cached models.
+
+
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+`ember install ember-data-fastboot`
 
-## Running
-
-* `ember serve`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
