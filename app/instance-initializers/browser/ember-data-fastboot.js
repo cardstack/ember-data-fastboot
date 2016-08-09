@@ -4,7 +4,6 @@ export function initialize(applicationInstance) {
   let dump = shoebox.retrieve('ember-data-store');
   if (!dump) { return; }
   let store = applicationInstance.lookup('service:store');
-  console.log(`pushed ${dump.records.data.length} records from shoebox`);
   store.pushPayload(dump.records);
 }
 
