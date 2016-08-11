@@ -9,7 +9,7 @@ This addon serializes the contents of your [ember-data](https://github.com/ember
 
 ## JSON-API Required
 
-This addon assumes that your application is using [DS.JSONAPISerializer](http://emberjs.com/api/data/classes/DS.JSONAPISerializer.html) as your application's default serialization method.
+Right now, this addon assumes that your application is using [DS.JSONAPISerializer](http://emberjs.com/api/data/classes/DS.JSONAPISerializer.html) as your application's default serialization method. See https://github.com/cardstack/ember-data-fastboot/issues/3 if you're interested in making it work for any format.
 
 ## Installation
 
