@@ -7,7 +7,9 @@ This addon serializes the contents of your [ember-data](https://github.com/ember
  3. Your application boots up in the browser. This addon's instance-initializer notices the serialized models and uses `pushPayload` to load them into the `Store`.
  4. As your app renders in the browser, any `store.findRecord`, etc will locate the already cached models.
 
+## JSON-API Required
 
+This addon assumes that your application is using [DS.JSONAPISerializer](http://emberjs.com/api/data/classes/DS.JSONAPISerializer.html) as your application's default serialization method.
 
 ## Installation
 
