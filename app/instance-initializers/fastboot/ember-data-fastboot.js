@@ -8,6 +8,7 @@ export function initialize(applicationInstance) {
         let name = store.typeMaps[k].type.modelName;
         return store.peekAll(name).toArray();
       }).reduce((a,b) => a.concat(b), [])
+        .filter(record => record.get('isLoaded'))
         .map(record => record.serialize({ includeId: true}))
         .reduce((a,b) => { a.data.push(b.data); return a; }, { data: [] });
     }
