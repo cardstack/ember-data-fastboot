@@ -4,13 +4,30 @@ export function initialize(applicationInstance) {
 
   shoebox.put('ember-data-store', {
     get records() {
-      return Object.keys(store.typeMaps).map(k => {
+      let serializedRecords = {};
+
+      Object.keys(store.typeMaps).map(k => {
         let name = store.typeMaps[k].type.modelName;
+        serializedRecords[name] = [];
         return store.peekAll(name).toArray();
       }).reduce((a,b) => a.concat(b), [])
-        .filter(record => record.get('isLoaded'))
-        .map(record => record.serialize({ includeId: true}))
-        .reduce((a,b) => { a.data.push(b.data); return a; }, { data: [] });
+        .filter(model => model.get('isLoaded'))
+        .forEach(model => {
+          let modelName = model._internalModel.modelName;
+          let serialized = model.serialize({ includeId: true });
+
+          if (Object.keys(serialized).includes('data')) {
+            if (serializedRecords[modelName].length === 0) {
+              serializedRecords[modelName] = { data: [] };
+            }
+
+            serializedRecords[modelName]['data'].push(serialized.data);
+          } else {
+            serializedRecords[modelName].push(serialized);
+          }
+        });
+
+      return serializedRecords;
     }
   });
 }
