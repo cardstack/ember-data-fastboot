@@ -13,7 +13,7 @@
   },
   "repository": "https://github.com/cardstack/ember-data-fastboot",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "author": "Edward Faulkner <ef@alum.mit.edu>",
   "license": "MIT",
@@ -45,7 +45,8 @@
     "ember-data"
   ],
   "dependencies": {
-    "ember-cli-babel": "^5.1.6"
+    "ember-cli-babel": "^5.1.6",
+    "ember-cli-version-checker": "^2.0.0"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

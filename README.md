@@ -15,3 +15,4 @@ Right now, this addon assumes that your application is using [DS.JSONAPISerializ
 
 `ember install ember-data-fastboot`
 
+Starting with version 0.1.0 this addon requires at least ember-cli-fastboot 1.0.0-rc.1.
