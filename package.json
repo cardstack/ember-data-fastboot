@@ -1,6 +1,6 @@
 {
   "name": "ember-data-fastboot",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Serializes and restores the ember-data store for fastboot.",
   "directories": {
     "doc": "doc",
