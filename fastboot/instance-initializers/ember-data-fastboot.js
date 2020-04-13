@@ -3,7 +3,11 @@ import Ember from 'ember';
 export function initialize(applicationInstance) {
   let store = applicationInstance.lookup('service:store');
   let shoebox = applicationInstance.lookup('service:fastboot').get('shoebox');
-  const modelNames = applicationInstance.lookup('data-adapter:main').getModelTypes().mapBy('name');
+
+  // Workaround for dataAdapter.getModelTypes() no longer working
+  const dataAdapter = applicationInstance.lookup('data-adapter:main');
+  const debugAdapter = dataAdapter.get('containerDebugAdapter');
+  const modelNames = debugAdapter.catalogEntriesByType('model');
 
   shoebox.put('ember-data-store', {
     get records() {
